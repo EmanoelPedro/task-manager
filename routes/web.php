@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\BoardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group(['prefix' => 'app', 'middleware' => 'auth'], function () {
+    Route::get('/',[AppController::class,'home'])->name('dash.home');
+    Route::get('/quadros/{slug}',[BoardController::class,'show'])->name('dash.board');
+});
+
 
 require __DIR__.'/auth.php';

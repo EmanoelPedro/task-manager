@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Board;
 use App\Http\Requests\StoreBoardRequest;
 use App\Http\Requests\UpdateBoardRequest;
+use Illuminate\Support\Facades\Request;
 
 class BoardController extends Controller
 {
@@ -45,9 +46,13 @@ class BoardController extends Controller
      * @param  \App\Models\Board  $board
      * @return \Illuminate\Http\Response
      */
-    public function show(Board $board)
+    public function show(string $slug)
     {
-        //
+
+        $board = Board::where('slug', strip_tags($slug))->first();
+        if ($board) {
+            var_dump($board);
+        }
     }
 
     /**

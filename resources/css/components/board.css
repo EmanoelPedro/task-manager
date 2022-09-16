@@ -1,0 +1,72 @@
+.board {
+    position: relative;
+    flex-basis: calc(25% - 20px);
+    height: 150px;
+    margin: 10px;
+    max-width: 400px;
+    background-image: url('https://i.pinimg.com/564x/75/7e/fc/757efc914a5dedf36c71db83ec7a6575.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 1s ease;
+
+}
+.board:hover .board-wrapper {
+    transition: all 0.4s ease;
+    background: rgba(0,0,0,0.3);
+}
+.board-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    color: #ffffff;
+    padding: 15px;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.board-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.board-workspace-name {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    color: #c3c3c3;
+}
+.board-workspace-name:hover {
+    transition: all 0.5s ease;
+    color: #ffffff;
+}
+
+.board-star {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #d1aa00;
+}
+.board-star:hover {
+    color: #ffd000;
+}
+
+
+@media (max-width: 68.75rem) {
+    .board {
+        flex-basis: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 51.875rem) {
+    .board {
+        flex-basis: calc(50% - 20px);
+    }
+}
+@media (max-width: 31.25rem) {
+    .board {
+        flex-basis: calc(100% - 20px);
+    }
+}

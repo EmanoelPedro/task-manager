@@ -1,3 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "boot.css";
+@import "layouts/navigation.css";
+@import "layouts/dashboard.css";
+
+@import "components/board.css";
