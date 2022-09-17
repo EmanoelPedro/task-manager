@@ -8,14 +8,17 @@ class Board extends Component
 {
 
     public $name;
+
+    public $slug;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($name, $slug)
     {
         $this->name = $name;
+        $this->slug = $slug;
     }
 
     /**

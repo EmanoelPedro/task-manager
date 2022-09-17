@@ -6,14 +6,16 @@ use Illuminate\View\Component;
 
 class BoardList extends Component
 {
+
+    public $list;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($list)
     {
-        //
+        $this->list = $list;
     }
 
     /**

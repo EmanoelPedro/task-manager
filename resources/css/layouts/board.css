@@ -1,0 +1,41 @@
+@import "../boot.css";
+@import "../components/board-list.css";
+.bord-container {
+    position: relative;
+    height: 50px;
+    bottom: 0;
+    max-width: 100%;
+    overflow-x: scroll;
+    background: purple;
+}
+.board-container-wrapper {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: start;
+    bottom: 0;
+}
+.board-content {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2422x1600/8942e2dfcf3cd8564819bb1f5d5f56fc/photo-1498736297812-3a08021f206f.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.board-content-header {
+    display: flex;
+    flex-flow: row wrap;
+}
+.board-content-header-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+.board-content-header-star {
+    color: #ffd000;
+    background: red;
+}

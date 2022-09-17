@@ -50,9 +50,11 @@ class BoardController extends Controller
     {
 
         $board = Board::where('slug', strip_tags($slug))->first();
-        if ($board) {
-            var_dump($board);
+        if (empty($board)) {
+           return redirect()->route('dash.home');
         }
+
+        return view('board', ['board' => $board]);
     }
 
     /**
