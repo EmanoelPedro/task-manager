@@ -7,18 +7,15 @@ use Illuminate\View\Component;
 class Board extends Component
 {
 
-    public $name;
-
-    public $slug;
+    public $board;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $slug)
+    public function __construct($board)
     {
-        $this->name = $name;
-        $this->slug = $slug;
+        $this->board = $board;
     }
 
     /**

@@ -12,8 +12,8 @@
     position: absolute;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     bottom: 0;
 }
 .board-content {

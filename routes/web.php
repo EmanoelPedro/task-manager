@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'app', 'middleware' => 'auth'], function () {
     Route::get('/',[AppController::class,'home'])->name('dash.home');
     Route::get('/quadros/{slug}',[BoardController::class,'show'])->name('dash.board');
+    Route::post('/quadros/setfavorite',[BoardController::class,'setFavorite'])->name('dash.setfavorite');
 });
 
 

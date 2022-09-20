@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Board;
 use App\Http\Requests\StoreBoardRequest;
 use App\Http\Requests\UpdateBoardRequest;
-use Illuminate\Support\Facades\Request;
+use App\Models\FavoriteBoard;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class BoardController extends Controller
 {
@@ -53,7 +55,6 @@ class BoardController extends Controller
         if (empty($board)) {
            return redirect()->route('dash.home');
         }
-
         return view('board', ['board' => $board]);
     }
 
@@ -89,5 +90,25 @@ class BoardController extends Controller
     public function destroy(Board $board)
     {
         //
+    }
+
+
+    public function setFavorite(Request $request)
+    {
+        $request->validate([
+            'board' => ['required','string','max:255']
+        ]);
+        $board = Board::where('slug',strip_tags($request->board))->first();
+        if ($board){
+            $isFavorite = FavoriteBoard::where('board_id',$board->id)->first();
+            if (!empty($isFavorite)){
+                $isFavorite->delete();
+                return Response::json(['message' => "Quadro removido com sucesso!"]);
+            }
+            $setFavorite = new FavoriteBoard();
+            $setFavorite->board_id = $board->id;
+            $setFavorite->save();
+            return Response::json(['message' => "Quadro adicionado com sucesso!"]);
+        }
     }
 }

@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('board_lists', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('board_id')->constrained();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('board_id')->constrained('boards');
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->timestamps();
+
+
         });
     }
 
