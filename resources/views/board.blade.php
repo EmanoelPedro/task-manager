@@ -16,6 +16,9 @@
 <div class="error-container"></div>
     <div class="board-content">
         <div class="board-content-header">
+            <div class="board-content-exit">
+                <i class='bx bx-left-arrow-alt'></i>
+            </div>
             <div class="board-content-header-title">
                 <p>{{$board->name}}</p>
             </div>
@@ -33,6 +36,10 @@
                     <x-board-list :list="$list"/>
                 @endforeach
                 @foreach($board->lists as $list)
+                    <x-board-list :list="$list"/>
+                @endforeach                @foreach($board->lists as $list)
+                    <x-board-list :list="$list"/>
+                @endforeach                @foreach($board->lists as $list)
                     <x-board-list :list="$list"/>
                 @endforeach
             </div>

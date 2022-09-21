@@ -1,3 +1,7 @@
-<div>
-    <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
+<div class="board-list-card">
+    <div class="board-list-card-wrapper">
+        <div class="board-list-card-wrapper-name">
+            <p>nome do quadro</p>
+        </div>
+    </div>
 </div>

@@ -14,7 +14,7 @@ $(document).ready(function(){
                 }
             });
             $.ajax({
-                url: "https://localhost/projetos/task-manager/public/app/quadros/setfavorite",
+                url: "https://localhost/sites/task-manager/public/app/quadros/setfavorite",
                 method: "POST",
                 crossDomain: true,
                 data: { board: star.attr('data-slug'),},
