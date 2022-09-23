@@ -35,13 +35,6 @@
                 @foreach($board->lists as $list)
                     <x-board-list :list="$list"/>
                 @endforeach
-                @foreach($board->lists as $list)
-                    <x-board-list :list="$list"/>
-                @endforeach                @foreach($board->lists as $list)
-                    <x-board-list :list="$list"/>
-                @endforeach                @foreach($board->lists as $list)
-                    <x-board-list :list="$list"/>
-                @endforeach
             </div>
         </div>
     </div>

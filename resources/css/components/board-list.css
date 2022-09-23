@@ -9,8 +9,11 @@
     overflow: hidden;
 }
 .board-list-wrapper {
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
 }
+
 .list-wrapper-header {
     color: #333333;
     font-weight: 600;

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class BoardList extends Model
 {
     use HasFactory;
+
+    public function cards () {
+        return $this->hasMany(Card::class,'list_id','id');
+    }
 }
